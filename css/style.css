@@ -1,0 +1,246 @@
+@font-face {
+    font-family: "BOLD";
+    src: url("../font/SpoqaHanSansNeo-Bold.ttf");
+}
+@font-face {
+    font-family: "MEDIUM";
+    src: url("../font/SpoqaHanSansNeo-Medium.ttf");
+}
+@font-face {
+    font-family: "LIGHT";
+    src: url("../font/SpoqaHanSansNeo-Regular.ttf");
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    background-image: url("https://source.unsplash.com/user/hbin12212/likes");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 메인 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+.container .main-wrapper {
+    text-align: center;
+    padding-bottom: 30px;
+    position: fixed;
+}
+
+/* 날짜&시계 */
+.main-wrapper .date {
+    font-family: "MEDIUM";
+    color: white;
+    font-size: var(--large);
+    text-align: center;
+}
+.main-wrapper .clock {
+    font-family: "BOLD";
+    color: white;
+    font-size: var(--xlarge);
+    margin-top: -20px;
+    margin-bottom: 25px;
+}
+
+/* 검색 */
+.main-wrapper .search {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.main-wrapper #search {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: "LIGHT";
+    color: white;
+    font-size: var(--regular);
+    padding: 10px 0px;
+    border-radius: 30px;
+    border: 0px;
+    width: 600px;
+    text-align: center;
+}
+.main-wrapper #search::placeholder {
+    color: lightgray;
+    font-size: var(--regular);
+    font-family: "LIGHT";
+}
+.main-wrapper .icon {
+    display: flex;
+    align-items: center;
+    margin-left: -40px;
+    cursor: pointer;
+}
+.main-wrapper .icon img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 명언 */
+.quotes {
+    color: white;
+    font-size: var(--regular);
+    font-family: "MEDIUM";
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+}
+
+/* 메모 */
+.memo-open {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 250px;
+    padding: 10px 30px;
+    color: white;
+    font-family: "LIGHT";
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-family: "LIGHT";
+    font-size: var(--xsmall);
+}
+.memo {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0px;
+    right: 0px;
+    width: 250px;
+    min-height: calc(100vh - 20px);
+    padding: 10px 30px;
+    color: white;
+    font-family: "LIGHT";
+}
+.memo .memo-close {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-family: "LIGHT";
+    font-size: var(--xsmall);
+}
+.memo .btn-wrapper {
+    margin-top: 20px;
+}
+.btn-wrapper .add-btn {
+    padding: 10px;
+    font-family: "LIGHT";
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    border: rgba(241, 241, 241, 0.5) 0.5px solid;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: var(--small);
+    cursor: pointer;
+    margin-bottom: 35px;
+}
+.btn-wrapper .add-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 메모 추가 */
+.input-memo-item {
+    display: none;
+    margin-top: 20px;
+    border: rgb(207, 207, 207) 0.5px solid;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: var(--small);
+    border-radius: 6px;
+    padding: 15px 15px;
+    margin-bottom: 20px;
+}
+.input-memo-item .content textarea {
+    font-family: "LIGHT";
+    min-height: 60px;
+    min-width: 210px;
+    max-width: 210px;
+    border-radius: 6px;
+    padding: 5px;
+}
+.input-memo-item .input-btn-box {
+    font-family: "MEDIUM";
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--xsmall);
+}
+.input-btn-box div {
+    padding: 5px 35px;
+    border-radius: 6px;
+    border: rgba(241, 241, 241, 0.5) 0.5px solid;
+    cursor: pointer;
+}
+
+.input-btn-box div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 메모 수정 */
+.edit-memo-item .content textarea {
+    font-family: "LIGHT";
+    min-height: 60px;
+    min-width: 210px;
+    max-width: 210px;
+    border-radius: 6px;
+    padding: 5px;
+}
+.edit-memo-item .input-btn-box {
+    font-family: "MEDIUM";
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--xsmall);
+}
+
+/* 메모 리스트 */
+.memo-list {
+}
+
+/* 메모 아이템 */
+.memo-list .memo-item {
+    border: rgba(241, 241, 241, 0.5) 0.5px solid;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: var(--small);
+    border-radius: 6px;
+    padding: 15px 15px;
+    margin-bottom: 20px;
+}
+.memo-item .item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.item-header .create-date {
+    font-family: "BOLD";
+}
+.item-header .btn-box {
+    display: flex;
+    font-family: "LIGHT";
+    font-size: var(--xsmall);
+    color: lightgray;
+}
+.btn-box .edit-btn {
+    margin-right: 5px;
+    cursor: pointer;
+}
+.btn-box .del-btn {
+    cursor: pointer;
+}
+.memo-item .content {
+    font-family: "LIGHT";
+}
+
+:root {
+    --xlarge: 120px;
+    --large: 20px;
+    --regular: 16px;
+    --small: 14px;
+    --xsmall: 12px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Title</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="today-info">
+                    <div class="date" id="date">
+                        <!-- 날짜&요일 -->
+                    </div>
+                    <div class="clock" id="clock">
+                        <!-- 현재 시간 -->
+                    </div>
+                </div>
+                <div class="search">
+                    <input
+                        id="search"
+                        autocomplete="off"
+                        onkeypress="enterKey(event)"
+                        placeholder="검색어를 입력하세요"
+                    />
+                    <div class="icon" onclick="handleSearch()">
+                        <img src="./img/search_icon.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="quotes">만약 하루를 성공하고 싶다면, 반드시 첫 한 시간을 성공해야 한다</div>
+        </div>
+        <div class="memo-open" onclick="toggle()">메모 열기</div>
+        <div class="memo" id="memo">
+            <div class="memo-close" onclick="toggle()">메모 닫기</div>
+            <div class="btn-wrapper">
+                <div class="add-btn" onclick="newMemoToggle()">+ 메모추가</div>
+            </div>
+            <!-- 새로운 메모 작성폼 -->
+            <div class="input-memo-item" id="new-memo-item">
+                <div class="content">
+                    <textarea id="new-content"></textarea>
+                </div>
+                <div class="input-btn-box">
+                    <div class="cancel-btn" onclick="newMemoToggle()">취소</div>
+                    <div class="save-btn" onclick="saveItem()">추가</div>
+                </div>
+            </div>
+            <!-- 메모리스트 -->
+            <div class="memo-list" id="memo-list"></div>
+        </div>
+    </body>
+    <script src="./js/main.js"></script>
+    <script src="./js/memo.js"></script>
+</html>
