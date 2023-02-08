@@ -9,6 +9,7 @@ if (localStorage?.getItem("isMemoOpen") === null) {
 } else {
     isMemoOpen = localStorage.getItem("isMemoOpen");
 }
+
 let memoList = [];
 if (localStorage.getItem("memoList") === null) {
     localStorage.setItem("memoList", memoList);
@@ -59,7 +60,7 @@ const showMemoList = () => {
             </div>
         </div>`;
     });
-    memoItemList.innerHTML = template;
+    memoItemList.insertAdjacentHTML() = template;
 };
 
 //추가 작성폼

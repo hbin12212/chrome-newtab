@@ -23,7 +23,6 @@ const modifyNumber = (time) => {
 
 const handleSearch = () => {
     let searchWord = document.getElementById("search").value;
-    console.log(searchWord);
     window.location.href = `https://google.com/search?q=${searchWord}`;
     searchWord = "";
 };
