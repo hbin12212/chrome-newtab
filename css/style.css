@@ -62,7 +62,7 @@ body {
 .quotes {
     color: white;
     font-size: var(--medium);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     margin-bottom: 35px;
     font-weight: 300px;
@@ -79,6 +79,21 @@ body {
     display: flex;
     justify-content: flex-end;
     font-size: var(--xsmall);
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bookmark-close {
+    width: 240px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px 30px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-size: var(--xsmall);
+    height: 20px;
 }
 
 .bookmark-open div {
@@ -89,16 +104,11 @@ body {
     width: 240px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    top: 0px;
+    top: 40px;
     right: 0px;
-    min-height: calc(100vh - 20px);
+    min-height: calc(100vh - 60px);
     padding: 10px 30px;
     color: white;
-}
-.bookmark .bookmark-close {
-    display: flex;
-    justify-content: flex-end;
-    font-size: var(--xsmall);
 }
 
 .bookmark-close div {

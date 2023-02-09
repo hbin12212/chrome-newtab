@@ -32,13 +32,13 @@
             </div>
             <div class="quotes">만약 하루를 성공하고 싶다면, 반드시 첫 한 시간을 성공해야 한다</div>
         </div>
-        <div class="bookmark-open">
-            <div  onclick="toggle()">📖</div>
+        <div class="bookmark-open" id="bookmark-open">
+            <div onclick="toggle()">📖</div>
+        </div>
+        <div class="bookmark-close" id="bookmark-close">
+            <div onclick="toggle()">📘</div>
         </div>
         <div class="bookmark" id="bookmark">
-            <div class="bookmark-close" >
-                <div onclick="toggle()">📘</div>
-            </div>
             <div class="btn-wrapper">
                 <div class="add-btn" onclick="newBookMarkToggle()">+ 북마크 추가</div>
             </div>
@@ -47,11 +47,11 @@
                 <div class="bookmark-input">
                     <div class="new-url-name">
                         <div class="label">이름</div>
-                        <input id="new-url-name"></input>
+                        <input id="new-url-name" />
                     </div>
-                    <div class="new-url"> 
+                    <div class="new-url">
                         <div class="label">링크</div>
-                        <input id="new-url"></input>
+                        <input id="new-url" />
                     </div>
                 </div>
                 <div class="input-btn-box">
@@ -65,4 +65,5 @@
     </body>
     <script src="./js/main.js"></script>
     <script src="./js/bookmark.js"></script>
+    <script src="./js/bookmark-toggle.js"></script>
 </html>
