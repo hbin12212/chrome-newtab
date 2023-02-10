@@ -14,19 +14,20 @@ const showBookMarkList = () => {
     let template = "";
     bookMarkList?.map((it, idx) => {
         template += `<div class="bookmark-item" id="bookmark-item${idx}">
-            <div class="item-header">
-                <div class="btn-box">
-                    <div class="del-btn" onclick="deleteItem(${idx})">삭제</div>
-                </div>
-            </div>
             <div class="bookmark_name" id="bookmark_name${idx}">
                 <a href=${it?.url}>
-                    ${it?.name}
+                    <div class="url-icon">
+                        <img src="https://www.google.com/s2/favicons?domain_url=${it?.url}" alt="icon${idx}"></img>
+                    </div>
+                    <div class="url-name">${it?.name}</div>
                 </a>
+            </div>   
+            <div class="btn-box">
+                <div class="del-btn" onclick="deleteItem(${idx})">삭제</div>
             </div>
         </div>`;
     });
-    bookMarkItemList.insertAdjacentHTML("afterbegin", template);
+    bookMarkItemList.innerHTML = template;
 };
 
 // <--북마크 추가 버튼-->
@@ -51,9 +52,6 @@ const saveItem = () => {
     document.getElementById("new-url-name").value = "";
     document.getElementById("new-url").value = "";
     newBookMarkToggle();
-    while (bookMarkItemList.firstChild) {
-        bookMarkItemList.removeChild(bookMarkItemList.firstChild);
-    }
     showBookMarkList();
 };
 
@@ -63,9 +61,6 @@ const deleteItem = (idx) => {
     if (flag) {
         bookMarkList?.splice(idx, 1);
         localStorage.setItem("bookMarkList", JSON.stringify(bookMarkList));
-        while (bookMarkItemList.firstChild) {
-            bookMarkItemList.removeChild(bookMarkItemList.firstChild);
-        }
         showBookMarkList();
     }
     return;

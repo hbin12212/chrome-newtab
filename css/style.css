@@ -45,7 +45,7 @@ body {
 .main-wrapper #search {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: var(--regular);
+    font-size: var(--medium);
     padding: 15px 0px;
     border-radius: 30px;
     border: 0px;
@@ -61,11 +61,11 @@ body {
 /* 명언 */
 .quotes {
     color: white;
-    font-size: var(--medium);
+    font-size: var(--small);
     position: fixed;
     bottom: 0;
-    margin-bottom: 35px;
-    font-weight: 300px;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
 
 /* 북마크 */
@@ -74,7 +74,7 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
-    padding: 10px 30px;
+    padding: 15px 30px;
     color: white;
     display: flex;
     justify-content: flex-end;
@@ -88,7 +88,7 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
-    padding: 10px 30px;
+    padding: 15px 30px;
     color: white;
     display: flex;
     justify-content: flex-end;
@@ -104,9 +104,9 @@ body {
     width: 240px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    top: 40px;
+    top: 50px;
     right: 0px;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 70px);
     padding: 10px 30px;
     color: white;
 }
@@ -116,7 +116,7 @@ body {
 }
 
 .bookmark .btn-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .btn-wrapper .add-btn {
     padding: 10px;
@@ -182,12 +182,19 @@ body {
 }
 
 /* 북마크 리스트 */
-.bookmark-list {
-}
 
 .bookmark-list a {
     color: white;
     text-decoration: none;
+    display: flex;
+}
+
+.bookmark-list .url-icon {
+    margin-right: 8px;
+}
+
+.url-icon img {
+    vertical-align: middle;
 }
 
 /* 북마크 아이템 */
@@ -198,11 +205,9 @@ body {
     border-radius: 5px;
     padding: 15px 15px;
     margin-bottom: 20px;
-}
-.bookmark-item .item-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
 .item-header .btn-box {
@@ -210,14 +215,11 @@ body {
     font-size: var(--xsmall);
     color: lightgray;
 }
-.btn-box .edit-btn {
-    margin-right: 5px;
-    cursor: pointer;
-}
+
 .btn-box .del-btn {
+    vertical-align: middle;
     cursor: pointer;
-}
-.bookmark-item .url {
+    font-size: 8px;
 }
 
 :root {

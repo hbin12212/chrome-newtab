@@ -21,7 +21,6 @@
                     </div>
                 </div>
                 <div class="search">
-                    <div class="icon"></div>
                     <input
                         id="search"
                         autocomplete="off"
@@ -30,13 +29,13 @@
                     />
                 </div>
             </div>
-            <div class="quotes">만약 하루를 성공하고 싶다면, 반드시 첫 한 시간을 성공해야 한다</div>
+            <div class="quotes" id="quotes"></div>
         </div>
         <div class="bookmark-open" id="bookmark-open">
-            <div onclick="toggle()">📖</div>
+            <div onclick="toggle()">북마크 닫기</div>
         </div>
         <div class="bookmark-close" id="bookmark-close">
-            <div onclick="toggle()">📘</div>
+            <div onclick="toggle()">북마크 열기</div>
         </div>
         <div class="bookmark" id="bookmark">
             <div class="btn-wrapper">
@@ -63,7 +62,9 @@
             <div class="bookmark-list" id="bookmark-list"></div>
         </div>
     </body>
-    <script src="./js/main.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/search.js"></script>
     <script src="./js/bookmark.js"></script>
     <script src="./js/bookmark-toggle.js"></script>
+    <script src="./js/quotes.js"></script>
 </html>
