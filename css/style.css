@@ -19,14 +19,14 @@ body {
 }
 
 /* 메인 */
-.container {
+.main-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     position: relative;
 }
-.container .main-wrapper {
+.main-container .main-wrapper {
     text-align: center;
     position: fixed;
 }
@@ -51,7 +51,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.main-wrapper #search {
+.main-wrapper #search-input {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: var(--medium);
@@ -68,7 +68,7 @@ body {
 }
 
 /* 명언 */
-.quotes {
+.quote {
     color: white;
     font-size: var(--small);
     position: fixed;
@@ -91,7 +91,6 @@ body {
     height: 20px;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
 .bookmark-close {
     width: 240px;
     position: absolute;
@@ -108,8 +107,11 @@ body {
 .bookmark-open div {
     cursor: pointer;
 }
+.bookmark-close div {
+    cursor: pointer;
+}
 
-.bookmark {
+.bookmark-bar {
     width: 240px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
@@ -120,14 +122,8 @@ body {
     color: white;
 }
 
-.bookmark-close div {
-    cursor: pointer;
-}
-
-.bookmark .btn-wrapper {
+.bookmark-item-add-btn {
     margin-top: 10px;
-}
-.btn-wrapper .add-btn {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -138,12 +134,12 @@ body {
     cursor: pointer;
     margin-bottom: 35px;
 }
-.btn-wrapper .add-btn:hover {
+.bookmark-item-add-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 북마크 추가 */
-.input-bookmark-item {
+.bookmark-item-input-form {
     background-color: rgba(255, 255, 255, 0.1);
     border: rgba(241, 241, 241, 0.2) 0.5px solid;
     font-size: var(--small);
@@ -153,48 +149,48 @@ body {
     margin-bottom: 20px;
 }
 
-.input-bookmark-item .bookmark-input {
+.bookmark-item-input-form .bookmark-input {
     margin-bottom: 12px;
 }
 
-.input-bookmark-item .bookmark-input .new-url-name {
+.bookmark-item-input-form .bookmark-input .new-url-name {
     margin-bottom: 12px;
     width: 100%;
 }
 
-.input-bookmark-item .bookmark-input .label {
+.bookmark-item-input-form .bookmark-input .label {
     margin-bottom: 3px;
     font-size: var(--xsmall);
 }
 
-.input-bookmark-item .bookmark-input input {
+.bookmark-item-input-form .bookmark-input input {
     width: 200px;
     height: 20px;
     border-radius: 5px;
     padding: 5px;
 }
-.input-bookmark-item .input-btn-box {
+.bookmark-item-input-form .bookmark-item-input-btn {
     display: flex;
     justify-content: space-between;
     font-size: var(--xsmall);
     margin-top: 5px;
 }
-.input-btn-box div {
+.bookmark-item-input-btn div {
     padding: 5px 35px;
     border-radius: 5px;
     border: rgba(241, 241, 241, 0.2) 0.5px solid;
     cursor: pointer;
 }
 
-.input-btn-box div:hover {
+.bookmark-item-input-btn div:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 북마크 리스트 */
 .bookmark-list a {
+    display: flex;
     color: white;
     text-decoration: none;
-    display: flex;
 }
 
 .bookmark-list .url-icon {

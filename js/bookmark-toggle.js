@@ -17,7 +17,7 @@ if (isBookMarkOpen === "close") {
 }
 
 // <--북마크 창 toggle-->
-const toggle = () => {
+const bookmarkBarToggle = () => {
     let isBookMarkOpen = localStorage?.getItem("isBookMarkOpen");
     if (isBookMarkOpen) {
         //localstorage에 isBookMarkOpen이 있다면

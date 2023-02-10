@@ -1,5 +1,5 @@
 const handleSearch = () => {
-    let searchWord = document.getElementById("search").value;
+    let searchWord = document.getElementById("search-input").value;
     window.location.href = `https://google.com/search?q=${searchWord}`;
     searchWord = "";
 };
