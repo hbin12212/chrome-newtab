@@ -1,4 +1,4 @@
-const bookMarkComponent = document.getElementById("bookmark");
+const bookMarkComponent = document.getElementById("bookmark-bar");
 const bookMarkOpenIcon = document.getElementById("bookmark-open");
 const bookMarkCloseIcon = document.getElementById("bookmark-close");
 
@@ -18,7 +18,7 @@ if (isBookMarkOpen === "close") {
 
 // <--북마크 창 toggle-->
 const bookmarkBarToggle = () => {
-    let isBookMarkOpen = localStorage?.getItem("isBookMarkOpen");
+    let isBookMarkOpen = localStorage.getItem("isBookMarkOpen");
     if (isBookMarkOpen) {
         //localstorage에 isBookMarkOpen이 있다면
         if (isBookMarkOpen === "open") {
@@ -38,5 +38,7 @@ const bookmarkBarToggle = () => {
         //localstorage에 isBookMarkOpen이 없다면
         localStorage.setItem("isBookMarkOpen", "close");
         bookMarkComponent.style.display = "none";
+        bookMarkOpenIcon.style.display = "none";
+        bookMarkCloseIcon.style.display = "flex";
     }
 };

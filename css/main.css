@@ -1,7 +1,6 @@
 :root {
     --xlarge: 150px;
     --large: 24px;
-    --regular: 18px;
     --medium: 16px;
     --small: 14px;
     --xsmall: 12px;
@@ -62,9 +61,9 @@ body {
     text-align: center;
     margin-top: -15px;
 }
-.main-wrapper #search::placeholder {
-    color: rgb(178, 178, 178);
-    font-size: var(--regular);
+.main-wrapper #search-input::placeholder {
+    color: rgb(189, 189, 189);
+    font-size: var(--medium);
 }
 
 /* 명언 */
