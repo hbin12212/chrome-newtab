@@ -1,5 +1,5 @@
 (function () {
-    const quoteElement = document.getElementById("quote");
+    const $quoteElement = document.getElementById("quote");
     const quoteItem = localStorage.getItem("quote");
 
     //현재시간
@@ -10,7 +10,7 @@
     const setQuote = (respond) => {
         let quote = { createDate: `${month}-${date}`, quoteData: respond };
         localStorage.setItem("quote", JSON.stringify(quote));
-        quoteElement.innerText = `"${respond}"`;
+        $quoteElement.innerText = `"${respond}"`;
     };
 
     //명언 API
@@ -29,7 +29,7 @@
         //localstorage에 quote가 있다면
         let { createDate, quoteData } = JSON.parse(quoteItem);
         if (createDate === `${month}-${date}`) {
-            quoteElement.innerText = `"${quoteData}"`;
+            $quoteElement.innerText = `"${quoteData}"`;
         } else {
             getQuote();
         }

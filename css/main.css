@@ -1,11 +1,10 @@
 :root {
-    --xlarge: 150px;
-    --large: 24px;
-    --medium: 16px;
-    --small: 14px;
-    --xsmall: 12px;
+    --xlarge: 170px;
+    --large: 28px;
+    --medium: 18px;
+    --small: 16px;
+    --xsmall: 14px;
 }
-
 body {
     margin: 0 auto;
     width: 100%;
@@ -213,13 +212,10 @@ body {
     align-items: center;
 }
 
-.item-header .btn-box {
+.bookmark-item .del-btn {
     display: flex;
     font-size: var(--xsmall);
     color: lightgray;
-}
-
-.btn-box .del-btn {
     vertical-align: middle;
     cursor: pointer;
     font-size: 8px;

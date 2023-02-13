@@ -1,5 +1,5 @@
-const newBookmarkForm = document.getElementById("bookmark-item-input-form");
-const bookmarkItemList = document.getElementById("bookmark-list");
+const $newBookmarkForm = document.getElementById("bookmark-item-input-form");
+const $bookmarkItemList = document.getElementById("bookmark-list");
 
 // <--북마크 리스트 초기 설정-->
 let bookmarkList = [];
@@ -9,56 +9,87 @@ localStorage.getItem("bookmarkList")
 
 // <--북마크 아이템 추가 버튼 초기 설정-->
 let isAddBtnClick = false;
-newBookmarkForm.style.display = "none";
+$newBookmarkForm.style.display = "none";
 
 // <--북마크 아이템 추가 버튼 Toggle-->
 const newBookmarkToggle = () => {
     isAddBtnClick = !isAddBtnClick;
-    isAddBtnClick ? (newBookmarkForm.style.display = "block") : (newBookmarkForm.style.display = "none");
+    isAddBtnClick ? ($newBookmarkForm.style.display = "block") : ($newBookmarkForm.style.display = "none");
+};
+
+//<--북마크 아이템 -->
+const setBookmarkItem = (item) => {
+    const $bookmarkItem = document.createElement("div");
+    $bookmarkItem.classList.add("bookmark-item");
+    $bookmarkItem.id = `bookmark-item-${item.createAt}`;
+
+    const $bookmarkName = document.createElement("div");
+    $bookmarkName.classList.add("bookmark-name");
+
+    const $bookmarkUrl = document.createElement("a");
+    $bookmarkUrl.classList.add("bookmark-url");
+
+    const $urlIcon = document.createElement("div");
+    $urlIcon.classList.add("url-icon");
+
+    const $urlIconImg = document.createElement("img");
+
+    const $urlName = document.createElement("div");
+    $urlName.classList.add("url-name");
+
+    const $bookmarkDelBtn = document.createElement("div");
+    $bookmarkDelBtn.classList.add("del-btn");
+    $bookmarkDelBtn.innerText = "삭제";
+    $bookmarkDelBtn.addEventListener("click", () => {
+        deleteBookmarkItem(item.createAt);
+    });
+
+    $bookmarkUrl.href = item.url;
+    $urlIconImg.src = `https://www.google.com/s2/favicons?domain_url=${item.url}`;
+    $urlName.innerText = item.name;
+
+    $bookmarkItem.appendChild($bookmarkName);
+    $bookmarkItem.appendChild($bookmarkDelBtn);
+    $bookmarkName.appendChild($bookmarkUrl);
+    $bookmarkUrl.appendChild($urlIcon);
+    $urlIcon.appendChild($urlIconImg);
+
+    $bookmarkUrl.appendChild($urlName);
+    $bookmarkItemList.appendChild($bookmarkItem);
 };
 
 // <--북마크 리스트 표시-->
 const setBookmarkList = () => {
-    let template = "";
-    bookmarkList.forEach((it, idx) => {
-        template += `<div class="bookmark-item" id="bookmark-item-${idx}">
-            <div class="bookmark_name" id="bookmark_name-${idx}">
-                <a href=${it.url}>
-                    <div class="url-icon">
-                        <img src="https://www.google.com/s2/favicons?domain_url=${it.url}" alt="icon-${idx}"></img>
-                    </div>
-                    <div class="url-name">${it.name}</div>
-                </a>
-            </div>   
-            <div class="btn-box">
-                <div class="del-btn" onclick="deleteBookmarkItem(${idx})">삭제</div>
-            </div>
-        </div>`;
+    bookmarkList.forEach((item) => {
+        setBookmarkItem(item);
     });
-    bookmarkItemList.innerHTML = template;
 };
 
 // <--북마크 아이템 추가-->
 const addBookmarkItem = () => {
+    let createAt = Date.now();
     let urlName = document.getElementById("new-bookmark-url-name-input").value;
     let url = document.getElementById("new-bookmark-url-input").value;
-    bookmarkList.unshift({ name: urlName, url: url });
+    bookmarkList.push({ name: urlName, url: url, createAt: createAt });
     localStorage.setItem("bookmarkList", JSON.stringify(bookmarkList));
     document.getElementById("new-bookmark-url-name-input").value = "";
     document.getElementById("new-bookmark-url-input").value = "";
+    setBookmarkItem({ name: urlName, url: url, createAt: createAt });
     newBookmarkToggle();
-    setBookmarkList();
 };
 
 // <--북마크 아이템 삭제-->
-const deleteBookmarkItem = (idx) => {
+const deleteBookmarkItem = (id) => {
     const flag = window.confirm("정말 삭제하시겠습니까?");
     if (flag) {
-        bookmarkList?.splice(idx, 1);
-        localStorage.setItem("bookmarkList", JSON.stringify(bookmarkList));
-        setBookmarkList();
+        let newBookmarkList = bookmarkList.filter((elm) => elm.createAt !== id);
+        localStorage.setItem("bookmarkList", JSON.stringify(newBookmarkList));
+        document.getElementById(`bookmark-item-${id}`).remove();
         return;
     }
 };
 
 setBookmarkList();
+document.getElementById("bookmark-item-add-btn").addEventListener("click", newBookmarkToggle);
+document.getElementById("cancel-btn").addEventListener("click", newBookmarkToggle);
+document.getElementById("add-btn").addEventListener("click", addBookmarkItem);

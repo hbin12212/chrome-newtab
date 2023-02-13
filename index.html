@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Title</title>
+        <title>chrome</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" />
@@ -21,25 +21,21 @@
                     </div>
                 </div>
                 <div class="search">
-                    <input
-                        id="search-input"
-                        autocomplete="off"
-                        onkeypress="enterKey(event)"
-                        placeholder="검색어를 입력하세요"
-                    />
+                    <input id="search-input" autocomplete="off" placeholder="검색어를 입력하세요" />
                 </div>
             </div>
             <div class="quote" id="quote"></div>
         </div>
+
         <div class="bookmark-open" id="bookmark-open">
-            <div onclick="bookmarkBarToggle()">북마크 닫기</div>
+            <div id="bookmark-open-btn">북마크 닫기</div>
         </div>
         <div class="bookmark-close" id="bookmark-close">
-            <div onclick="bookmarkBarToggle()">북마크 열기</div>
+            <div id="bookmark-close-btn">북마크 열기</div>
         </div>
 
         <div class="bookmark-bar" id="bookmark-bar">
-            <div class="bookmark-item-add-btn" onclick="newBookmarkToggle()">+ 북마크 추가</div>
+            <div class="bookmark-item-add-btn" id="bookmark-item-add-btn">+ 북마크 추가</div>
 
             <!-- 새로운 북마크 작성폼 -->
             <div class="bookmark-item-input-form" id="bookmark-item-input-form">
@@ -54,8 +50,8 @@
                     </div>
                 </div>
                 <div class="bookmark-item-input-btn">
-                    <div class="cancel-btn" onclick="newBookmarkToggle()">취소</div>
-                    <div class="add-btn" onclick="addBookmarkItem()">추가</div>
+                    <div class="cancel-btn" id="cancel-btn">취소</div>
+                    <div class="add-btn" id="add-btn">추가</div>
                 </div>
             </div>
 
@@ -63,9 +59,9 @@
             <div class="bookmark-list" id="bookmark-list"></div>
         </div>
     </body>
-    <script src="./js/clock.js" defer></script>
-    <script src="./js/search.js" defer></script>
-    <script src="./js/bookmark.js" defer></script>
-    <script src="./js/bookmark-toggle.js" defer></script>
-    <script src="./js/quote.js" defer></script>
+    <script defer src="./js/clock.js"></script>
+    <script defer src="./js/search.js"></script>
+    <script defer src="./js/bookmark.js"></script>
+    <script defer src="./js/bookmark-toggle.js"></script>
+    <script defer src="./js/quote.js"></script>
 </html>

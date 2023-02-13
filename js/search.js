@@ -1,5 +1,7 @@
+const $searchInput = document.getElementById("search-input");
+
 const handleSearch = () => {
-    let searchWord = document.getElementById("search-input").value;
+    let searchWord = $searchInput.value;
     window.location.href = `https://google.com/search?q=${searchWord}`;
     searchWord = "";
 };
@@ -9,3 +11,7 @@ const enterKey = (e) => {
         handleSearch();
     }
 };
+
+$searchInput.addEventListener("keypress", (e) => {
+    enterKey(e);
+});
