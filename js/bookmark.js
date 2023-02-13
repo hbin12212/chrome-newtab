@@ -4,7 +4,7 @@ const $bookmarkItemList = document.getElementById("bookmark-list");
 // <--북마크 리스트 초기 설정-->
 let bookmarkList = [];
 localStorage.getItem("bookmarkList")
-    ? (bookmarkList = JSON?.parse(localStorage.getItem("bookmarkList")))
+    ? (bookmarkList = JSON.parse(localStorage.getItem("bookmarkList")))
     : localStorage.setItem("bookmarkList", bookmarkList);
 
 // <--북마크 아이템 추가 버튼 초기 설정-->
@@ -67,9 +67,10 @@ const setBookmarkList = () => {
 
 // <--북마크 아이템 추가-->
 const addBookmarkItem = () => {
-    let createAt = Date.now();
+    let bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"));
     let urlName = document.getElementById("new-bookmark-url-name-input").value;
     let url = document.getElementById("new-bookmark-url-input").value;
+    let createAt = Date.now();
     bookmarkList.push({ name: urlName, url: url, createAt: createAt });
     localStorage.setItem("bookmarkList", JSON.stringify(bookmarkList));
     document.getElementById("new-bookmark-url-name-input").value = "";
@@ -82,6 +83,7 @@ const addBookmarkItem = () => {
 const deleteBookmarkItem = (id) => {
     const flag = window.confirm("정말 삭제하시겠습니까?");
     if (flag) {
+        let bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"));
         let newBookmarkList = bookmarkList.filter((elm) => elm.createAt !== id);
         localStorage.setItem("bookmarkList", JSON.stringify(newBookmarkList));
         document.getElementById(`bookmark-item-${id}`).remove();
