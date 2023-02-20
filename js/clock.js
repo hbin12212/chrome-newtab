@@ -16,7 +16,7 @@
     };
 
     const setDate = (month, date, day) => {
-        dateElement.innerText = `${month}.${date}.${day}`;
+        dateElement.textContent = `${month}.${date}.${day}`;
     };
 
     const getTime = () => {
@@ -27,7 +27,7 @@
     };
 
     const setTime = (hour, minute) => {
-        timeElement.innerText = `${hour}:${minute}`;
+        timeElement.textContent = `${hour}:${minute}`;
     };
 
     getDate();

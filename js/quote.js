@@ -29,7 +29,7 @@
         //localstorage에 quote가 있다면
         let { createDate, quoteData } = JSON.parse(quoteItem);
         if (createDate === `${month}-${date}`) {
-            $quoteElement.innerText = `"${quoteData}"`;
+            $quoteElement.textContent = `"${quoteData}"`;
         } else {
             getQuote();
         }

@@ -22,6 +22,8 @@ const setBookmarkItem = (item) => {
     const $bookmarkItem = document.createElement("div");
     $bookmarkItem.classList.add("bookmark-item");
     $bookmarkItem.id = `bookmark-item-${item.createAt}`;
+    console.log($bookmarkItem.classList);
+    console.log($bookmarkItem.className);
 
     const $bookmarkName = document.createElement("div");
     $bookmarkName.classList.add("bookmark-name");
@@ -39,14 +41,14 @@ const setBookmarkItem = (item) => {
 
     const $bookmarkDelBtn = document.createElement("div");
     $bookmarkDelBtn.classList.add("del-btn");
-    $bookmarkDelBtn.innerText = "삭제";
+    $bookmarkDelBtn.textContent = "삭제";
     $bookmarkDelBtn.addEventListener("click", () => {
         deleteBookmarkItem(item.createAt);
     });
 
     $bookmarkUrl.href = item.url;
     $urlIconImg.src = `https://www.google.com/s2/favicons?domain_url=${item.url}`;
-    $urlName.innerText = item.name;
+    $urlName.textContent = item.name;
 
     $bookmarkItem.appendChild($bookmarkName);
     $bookmarkItem.appendChild($bookmarkDelBtn);

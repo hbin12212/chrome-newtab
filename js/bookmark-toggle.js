@@ -3,7 +3,7 @@ const $bookMarkOpenIcon = document.getElementById("bookmark-open");
 const $bookMarkCloseIcon = document.getElementById("bookmark-close");
 
 // <--북마크 창-->
-const isBookMarkOpen = localStorage?.getItem("isBookMarkOpen");
+const isBookMarkOpen = localStorage.getItem("isBookMarkOpen");
 if (isBookMarkOpen === "close") {
     //localstorage에 isBookMarkOpen이 close라면
     $bookMarkComponent.style.display = "none";
