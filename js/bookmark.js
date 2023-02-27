@@ -22,8 +22,6 @@ const setBookmarkItem = (item) => {
     const $bookmarkItem = document.createElement("div");
     $bookmarkItem.classList.add("bookmark-item");
     $bookmarkItem.id = `bookmark-item-${item.createAt}`;
-    console.log($bookmarkItem.classList);
-    console.log($bookmarkItem.className);
 
     const $bookmarkName = document.createElement("div");
     $bookmarkName.classList.add("bookmark-name");

@@ -71,8 +71,11 @@ body {
     font-size: var(--small);
     position: fixed;
     bottom: 0;
+    max-width: 800px;
+    padding: 0 10px;
     margin-bottom: 20px;
     font-weight: 300;
+    word-wrap: keep-all;
 }
 
 /* 북마크 */

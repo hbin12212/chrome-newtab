@@ -1,4 +1,5 @@
 (function () {
+    const API_URL = "https://port-0-random-quote-4uvg2mleme84ru.sel3.cloudtype.app/";
     const $quoteElement = document.getElementById("quote");
     const quoteItem = localStorage.getItem("quote");
 
@@ -16,7 +17,7 @@
     //명언 API
     const getQuote = async () => {
         try {
-            const data = await fetch("https://api.qwer.pw/request/helpful_text?apikey=guest").then((res) => res.json());
+            const data = await fetch(API_URL).then((res) => res.json());
             const respond = data[1].respond;
             setQuote(respond);
         } catch (err) {
