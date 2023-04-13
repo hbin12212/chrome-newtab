@@ -1,9 +1,9 @@
 (function () {
-    const timeElement = document.getElementById("clock");
+    const timeElement = document.getElementById("time");
     const dateElement = document.getElementById("date");
 
-    const modifyNumber = (time) => {
-        return parseInt(time) < 10 ? "0" + time : time;
+    const modifyNumber = (number) => {
+        return parseInt(number) < 10 ? "0" + number : number;
     };
 
     const getDate = () => {
@@ -16,7 +16,7 @@
     };
 
     const setDate = (month, date, day) => {
-        dateElement.textContent = `${month}.${date}.${day}`;
+        dateElement.textContent = `${month}월${date}일${day}`;
     };
 
     const getTime = () => {
