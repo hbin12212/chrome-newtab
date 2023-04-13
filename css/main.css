@@ -36,7 +36,7 @@ body {
     text-align: center;
     font-weight: 400;
 }
-.main-wrapper .clock {
+.main-wrapper .time {
     color: white;
     font-size: var(--xlarge);
     margin-top: -35px;
