@@ -5,7 +5,7 @@ const $bookmarkItemList = document.getElementById("bookmark-list");
 let bookmarkList = [];
 localStorage.getItem("bookmarkList")
     ? (bookmarkList = JSON.parse(localStorage.getItem("bookmarkList")))
-    : localStorage.setItem("bookmarkList", bookmarkList);
+    : JSON.stringify(localStorage.setItem("bookmarkList", bookmarkList));
 
 // <--북마크 아이템 추가 버튼 초기 설정-->
 let isAddBtnClick = false;
@@ -67,7 +67,10 @@ const setBookmarkList = () => {
 
 // <--북마크 아이템 추가-->
 const addBookmarkItem = () => {
-    let bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"));
+    let bookmarkList =[];
+    if(localStorage.getItem("bookmarkList")){
+        bookmarkList = JSON.parse(localStorage.getItem("bookmarkList"));
+    }
     let urlName = document.getElementById("new-bookmark-url-name-input").value;
     let url = document.getElementById("new-bookmark-url-input").value;
     let createAt = Date.now();
