@@ -4,47 +4,43 @@
     --medium: 18px;
     --small: 16px;
     --xsmall: 14px;
+    --xxsmall : 10px;
 }
 
 body {
     margin: 0 auto;
-    width: 100%;
+    width: 100%;;
+    font-family: "Noto Sans KR", sans-serif;
     background-image: url("https://source.unsplash.com/user/hbin12212/likes");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    font-family: "Noto Sans KR", sans-serif;
+    color:white;
 }
 
-/* 메인 */
-.main-container {
+.main-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh;  
+    background-color: rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-.main-container .main-wrapper {
+.main-container .main-wrapper{
     text-align: center;
-    position: fixed;
 }
 
-/* 날짜&시계 */
+/* 시계 */
 .main-wrapper .date {
-    color: white;
     font-size: var(--large);
-    text-align: center;
     font-weight: 400;
 }
-
 .main-wrapper .time {
-    color: white;
     font-size: var(--xlarge);
-    margin-top: -35px;
-    margin-bottom: 25px;
     font-weight: 400;
+    margin-top: -35px;
 }
 
 /* 검색 */
@@ -52,27 +48,24 @@ body {
     display: flex;
     justify-content: center;
 }
-
 .main-wrapper #search-input {
+    width: 600px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: var(--medium);
     padding: 15px 0px;
     border-radius: 30px;
     border: 0px;
-    width: 600px;
     text-align: center;
     margin-top: -10px;
 }
-
 .main-wrapper #search-input::placeholder {
-    color: rgb(189, 189, 189);
+    color: rgb(169, 169, 169);
     font-size: var(--medium);
 }
 
 /* 명언 */
 .quote {
-    color: white;
     font-size: var(--small);
     position: fixed;
     bottom: 0;
@@ -81,35 +74,34 @@ body {
     margin-bottom: 20px;
     font-weight: 300;
     text-align: center;
-
 }
 
-/* 북마크 */
+/* 북마크 바 열고 닫기*/
 .bookmark-open {
     width: 240px;
+    padding: 15px 30px;
+    font-size: var(--xsmall);
+    height: 20px;
     position: absolute;
     top: 0px;
     right: 0px;
-    padding: 15px 30px;
     color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: flex-end;
-    font-size: var(--xsmall);
-    height: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .bookmark-close {
     width: 240px;
+    padding: 15px 30px;
+    font-size: var(--xsmall);
+    height: 20px;
     position: absolute;
     top: 0px;
     right: 0px;
-    padding: 15px 30px;
     color: white;
     display: flex;
     justify-content: flex-end;
-    font-size: var(--xsmall);
-    height: 20px;
 }
 
 .bookmark-open div {
@@ -122,8 +114,8 @@ body {
 
 .bookmark-bar {
     width: 240px;
-    position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
     top: 50px;
     right: 0px;
     min-height: calc(100vh - 70px);
@@ -131,41 +123,37 @@ body {
     color: white;
 }
 
+/* 북마크 아이템 추가 버튼*/
 .bookmark-item-add-btn {
-    margin-top: 10px;
-    padding: 10px;
+    padding: 10px;  
+    font-size: var(--small);
+    cursor: pointer;
     display: flex;
     justify-content: center;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     border: rgba(241, 241, 241, 0.2) 0.5px solid;
-    font-size: var(--small);
-    cursor: pointer;
     margin-bottom: 35px;
+    margin-top: 10px;
 }
 
 .bookmark-item-add-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 북마크 추가 */
+/* 북마크 아이템 추가 폼*/
 .bookmark-item-input-form {
     background-color: rgba(255, 255, 255, 0.1);
     border: rgba(241, 241, 241, 0.2) 0.5px solid;
     font-size: var(--small);
     border-radius: 5px;
-    padding: 12px 12px;
+    padding: 12px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .bookmark-item-input-form .bookmark-input {
     margin-bottom: 12px;
-}
-
-.bookmark-item-input-form .bookmark-input .new-url-name {
-    margin-bottom: 12px;
-    width: 100%;
 }
 
 .bookmark-item-input-form .bookmark-input .label {
@@ -195,7 +183,7 @@ body {
 }
 
 .bookmark-item-input-btn div:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 북마크 리스트 */
@@ -219,7 +207,7 @@ body {
     border: rgba(241, 241, 241, 0.2) 0.5px solid;
     font-size: var(--small);
     border-radius: 5px;
-    padding: 15px 15px;
+    padding: 15px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -227,10 +215,8 @@ body {
 }
 
 .bookmark-item .del-btn {
-    display: flex;
-    font-size: var(--xsmall);
+    font-size: var(--xxsmall);
     color: lightgray;
     vertical-align: middle;
     cursor: pointer;
-    font-size: 8px;
 }
