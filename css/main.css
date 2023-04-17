@@ -5,6 +5,7 @@
     --small: 16px;
     --xsmall: 14px;
 }
+
 body {
     margin: 0 auto;
     width: 100%;
@@ -24,6 +25,7 @@ body {
     height: 100vh;
     position: relative;
 }
+
 .main-container .main-wrapper {
     text-align: center;
     position: fixed;
@@ -36,6 +38,7 @@ body {
     text-align: center;
     font-weight: 400;
 }
+
 .main-wrapper .time {
     color: white;
     font-size: var(--xlarge);
@@ -49,6 +52,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .main-wrapper #search-input {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -58,8 +62,9 @@ body {
     border: 0px;
     width: 600px;
     text-align: center;
-    margin-top: -15px;
+    margin-top: -10px;
 }
+
 .main-wrapper #search-input::placeholder {
     color: rgb(189, 189, 189);
     font-size: var(--medium);
@@ -75,7 +80,8 @@ body {
     padding: 0 10px;
     margin-bottom: 20px;
     font-weight: 300;
-    word-wrap: keep-all;
+    text-align: center;
+
 }
 
 /* 북마크 */
@@ -92,6 +98,7 @@ body {
     height: 20px;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .bookmark-close {
     width: 240px;
     position: absolute;
@@ -108,6 +115,7 @@ body {
 .bookmark-open div {
     cursor: pointer;
 }
+
 .bookmark-close div {
     cursor: pointer;
 }
@@ -135,6 +143,7 @@ body {
     cursor: pointer;
     margin-bottom: 35px;
 }
+
 .bookmark-item-add-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -170,12 +179,14 @@ body {
     border-radius: 5px;
     padding: 5px;
 }
+
 .bookmark-item-input-form .bookmark-item-input-btn {
     display: flex;
     justify-content: space-between;
     font-size: var(--xsmall);
     margin-top: 5px;
 }
+
 .bookmark-item-input-btn div {
     padding: 5px 35px;
     border-radius: 5px;

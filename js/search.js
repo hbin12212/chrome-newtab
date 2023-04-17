@@ -1,17 +1,17 @@
-const $searchInput = document.getElementById("search-input");
+const searchInput = document.getElementById("search-input");
 
-const handleSearch = () => {
-    let searchWord = $searchInput.value;
+const showSearchResult = () => {
+    let searchWord = searchInput.value;
     window.location.href = `https://google.com/search?q=${searchWord}`;
     searchWord = "";
 };
 
-const enterKey = (e) => {
-    if (e.keyCode === 13) {
-        handleSearch();
+const enterKey = (event) => {
+    if (event.code === "Enter") {
+        showSearchResult();
     }
 };
 
-$searchInput.addEventListener("keypress", (e) => {
-    enterKey(e);
+searchInput.addEventListener("keypress", (event) => {
+    enterKey(event);
 });

@@ -16,7 +16,7 @@
     };
     
     const setNowDate = (month, date, day) => {
-        dateElement.textContent = `${month}월${date}일${day}`;
+        dateElement.textContent = `${month}월${date}일 ${day}`;
     };
     
     const getNowTime = () => {
