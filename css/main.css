@@ -4,31 +4,32 @@
     --medium: 18px;
     --small: 16px;
     --xsmall: 14px;
-    --xxsmall : 10px;
+    --xxsmall: 10px;
 }
 
 body {
     margin: 0 auto;
-    width: 100%;;
-    font-family: "Noto Sans KR", sans-serif;
-    background-image: url("https://source.unsplash.com/user/hbin12212/likes");
+    width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-image: url('https://source.unsplash.com/user/hbin12212/likes');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    color:white;
+    color: white;
 }
 
-.main-container{
+.main-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: fixed;
+    width: 100%;
 }
 
-.main-container .main-wrapper{
+.main-container .main-wrapper {
     text-align: center;
 }
 
@@ -125,7 +126,7 @@ body {
 
 /* 북마크 아이템 추가 버튼*/
 .bookmark-item-add-btn {
-    padding: 10px;  
+    padding: 10px;
     font-size: var(--small);
     cursor: pointer;
     display: flex;
