@@ -1,7 +1,7 @@
 (function () {
-    const API_URL = "https://port-0-random-quote-4uvg2mleme84ru.sel3.cloudtype.app/";
-    const quoteElement = document.getElementById("quote");
-    const quoteItem = localStorage.getItem("quote");
+    const API_URL = 'https://random-quote.hyobb.com';
+    const quoteElement = document.getElementById('quote');
+    const quoteItem = localStorage.getItem('quote');
 
     //현재시간
     const nowDate = new Date();
@@ -10,7 +10,7 @@
 
     const setQuote = (result) => {
         let quote = { createDate: `${month}-${date}`, quoteData: result };
-        localStorage.setItem("quote", JSON.stringify(quote));
+        localStorage.setItem('quote', JSON.stringify(quote));
         quoteElement.textContent = `"${result}"`;
     };
 
@@ -18,12 +18,12 @@
     const getQuote = async () => {
         try {
             const data = await fetch(API_URL).then((res) => res.json());
-            console.log(data)
+            console.log(data);
             const result = data[1].respond;
             setQuote(result);
         } catch (err) {
             console.log(`err : ${err}`);
-            setQuote("만약 하루를 성공하고 싶다면, 반드시 첫 한 시간을 성공해야 한다.");
+            setQuote('만약 하루를 성공하고 싶다면, 반드시 첫 한 시간을 성공해야 한다.');
         }
     };
 
