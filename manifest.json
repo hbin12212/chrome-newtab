@@ -3,7 +3,6 @@
     "description": "Made by Hyobin",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": ["storage"],
     "icons": {
         "16": "icons/icon16.png",
         "32": "icons/icon32.png",
